@@ -18,10 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [MenuController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/createmenu', [MenuController::class, 'create']);
+Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu');
+Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu');
 
 require __DIR__.'/auth.php';

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -14,6 +16,9 @@ class MenuController extends Controller
     public function index()
     {
         //
+        $menus = Menu::all();
+
+        return view('dashboard', compact('menus'));
     }
 
     /**
@@ -36,6 +41,18 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         //
+        $extension = $request->file('ImageMenu')->getClientOriginalExtension();
+        $fileName = $request->NameMenu.'.'.$extension;
+        $request->file('ImageMenu')->storeAs('public/menus/', $fileName);
+
+        Menu::create([
+            'name' => $request->NameMenu,
+            'description' => $request->DescriptionMenu,
+            'price' => $request->PriceMenu,
+            'image' => $fileName
+        ]);
+
+        return redirect(route('dashboard'));
     }
 
     /**
@@ -47,6 +64,9 @@ class MenuController extends Controller
     public function show($id)
     {
         //
+        $menu = Menu::findOrFail($id);
+
+        return view('menudetail', compact('menu'));
     }
 
     /**

@@ -1,23 +1,30 @@
 @extends('template')
 
-@section('title', 'cretae_menu')
+@section('title', 'create menu')
 
 @section('body')
-    <form>
+<div class="m-5">
+    <h1 class="display-1 text-center">Create Menu</h1>
+    <form action="{{ route('storemenu') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <label for="NameMenu">Nama Menu</label>
+            <input type="text" class="form-control" id="NameMenu" aria-describedby="emailHelp" placeholder="Enter Nama Menu" name="NameMenu">
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="DescriptionMenu">Description Menu</label>
+            <input type="text" class="form-control" id="DescriptionMenu" placeholder="Enter Description Menu" name="DescriptionMenu">
         </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        <div class="form-group">
+            <label for="PriceMenu">Price Menu</label>
+            <input type="number" class="form-control" id="PriceMenu" placeholder="Enter Price Menu" name="PriceMenu">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="ImageMenu">Image Menu</label>
+            <input type="file" class="form-control" id="IamgeMenu" placeholder="Enter Image Menu" name="ImageMenu">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
     </form>
+</div>
+
 @endsection

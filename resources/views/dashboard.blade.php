@@ -1,17 +1,27 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+@extends('template')
+
+@section('title', 'dashboard')
+
+@section('body')
+<div class="d-flex flex-column m-5">
+    @foreach ($menus as $menu)
+        <div class="card mb-3" style="max-width: 100vw;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{asset('/storage/menus/'.$menu->image)}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$menu->name}}</h5>
+                        {{-- <p class="card-text">{{$menu->description}}</p> --}}
+                        <p class="card-text"><small class="text-muted">{{$menu->price}}</small></p>
+                        <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Add to cart</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</x-app-layout>
+    @endforeach
+</div>
+
+@endsection
