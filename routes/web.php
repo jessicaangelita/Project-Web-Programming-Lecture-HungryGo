@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 
@@ -23,5 +24,6 @@ Route::get('/dashboard', [MenuController::class, 'index'])->middleware(['auth'])
 Route::get('/createmenu', [MenuController::class, 'create']);
 Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu');
 Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu');
+Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart');
 
 require __DIR__.'/auth.php';

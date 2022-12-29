@@ -11,9 +11,10 @@
       <p class="card-text">{{$menu->description}}</p>
       <p class="card-text">{{$menu->price}}</p>
       <p class="card-text">Quantity</p>
-      <form action="">
-        <input type="number" class="form-control">
-        <button class="btn btn-primary mt-3">Add to Cart</button>
+      <form action="{{ route('storecart', ['id'=>$menu->id]) }}" method="POST">
+        @csrf
+        <input type="number" class="form-control" name="quantity">
+        <button class="btn btn-primary mt-3" type="submit">Add to Cart</button>
       </form>
 
     </div>
