@@ -69,6 +69,10 @@ class MenuController extends Controller
         return view('menudetail', compact('menu'));
     }
 
+    public function ordermenu(){
+
+        return view ('order');
+    }
     /**
      * Show the form for editing the specified resource.
      *

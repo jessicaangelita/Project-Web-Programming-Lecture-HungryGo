@@ -25,5 +25,5 @@ Route::get('/createmenu', [MenuController::class, 'create']);
 Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu');
 Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu');
 Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart');
-
+Route::get('/ordermenu', [MenuController::class, 'ordermenu']);
 require __DIR__.'/auth.php';
