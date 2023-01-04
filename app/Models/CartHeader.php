@@ -12,4 +12,9 @@ class CartHeader extends Model
     protected $fillable = [
         'user_id'
     ];
+
+    public function cartDetails()
+    {
+        return $this->hasMany(CartDetail::class, 'cart_id', 'id');
+    }
 }

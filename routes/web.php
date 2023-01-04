@@ -21,9 +21,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [MenuController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/createmenu', [MenuController::class, 'create']);
-Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu');
-Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu');
-Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart');
-Route::get('/ordermenu', [MenuController::class, 'ordermenu']);
+Route::get('/createmenu', [MenuController::class, 'create'])->middleware(['isAdmin']);
+Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu')->middleware(['isAdmin']);
+Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu')->middleware(['isCustomer']);
+Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart')->middleware(['isCustomer']);
+Route::get('/ordermenu', [MenuController::class, 'ordermenu'])->middleware(['auth']);
+Route::get('/cart', [CartController::class, 'index'])->middleware(['isCustomer']);
+
 require __DIR__.'/auth.php';

@@ -16,7 +16,11 @@
                         <h5 class="card-title">{{$menu->name}}</h5>
                         {{-- <p class="card-text">{{$menu->description}}</p> --}}
                         <p class="card-text"><small class="text-muted">{{$menu->price}}</small></p>
-                        <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Add to cart</a>
+                        @can('admin')
+                            <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Edit menu</a>
+                            @else
+                            <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Add to cart</a>
+                        @endcan
                     </div>
                 </div>
             </div>

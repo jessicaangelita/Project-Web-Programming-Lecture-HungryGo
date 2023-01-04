@@ -25,10 +25,16 @@
                 <a class="nav-link" href="/createmenu">CreateMenu</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/cart">Cart</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/ordermenu">Order</a>
               </li>
           </div>
-
+          <form action="{{route('logout')}}" method="POST">
+            @csrf
+            <button class="d-flex btn btn-danger">Log Out</button>
+          </form>
         </div>
       </nav>
     @yield('body')

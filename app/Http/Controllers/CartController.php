@@ -18,6 +18,8 @@ class CartController extends Controller
     public function index()
     {
         //
+        $cartHeader = CartHeader::where('user_id', '=', Auth::user()->id)->first();
+        return view('cart', compact('cartHeader'));
     }
 
 
@@ -30,7 +32,7 @@ class CartController extends Controller
     public function store(Request $request, $id)
     {
         //
-        $user = auth()->user();
+        // $user = auth()->user();
 
         CartHeader::updateOrCreate([
             'user_id'   => Auth::user()->id,
@@ -38,8 +40,8 @@ class CartController extends Controller
             'user_id'   => Auth::user()->id
         ]);
 
-        $cartHeader = CartHeader::findOrFail($user->id);
-
+        $cartHeader = CartHeader::where('user_id', '=', Auth::user()->id)->first();
+        // dd($cartHeader->id);
         CartDetail::updateOrCreate([
             'menu_id' => $id
         ],[
