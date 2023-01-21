@@ -15,4 +15,5 @@ class Menu extends Model
         'price',
         'image'
     ];
+    protected $table ='menus';
 }

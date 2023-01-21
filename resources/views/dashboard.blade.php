@@ -17,7 +17,8 @@
                         {{-- <p class="card-text">{{$menu->description}}</p> --}}
                         <p class="card-text"><small class="text-muted">{{$menu->price}}</small></p>
                         @can('admin')
-                            <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Edit menu</a>
+                            <a href="/editmenu/{{$menu->id}}" class="btn btn-primary">Edit menu</a>
+                          
                             @else
                             <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Add to cart</a>
                         @endcan

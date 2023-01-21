@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Menu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
@@ -55,6 +56,7 @@ class MenuController extends Controller
         return redirect(route('dashboard'));
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -81,7 +83,8 @@ class MenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $menu = Menu::findOrFail($id);
+        return view('editmenu', compact('menu'));
     }
 
     /**
@@ -93,7 +96,27 @@ class MenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'NameMenu'=>'required|min:5',
+            'DescriptionMenu'=>'required',
+            'PriceMenu'=>'required',
+            'ImageMenu'=>'required',
+            ]);
+
+        $extension = $request->file('ImageMenu')->getClientOriginalExtension();
+        $fileName = $request->NameMenu.'.'.$extension;
+        $request->file('ImageMenu')->storeAs('public/menus/', $fileName);
+
+        $nama = $request->input('NameMenu');
+        $description=$request->input('DescriptionMenu');
+        $price = $request->input('PriceMenu');
+        $image=$fileName;
+
+
+        DB::update('update `menus` set `name` = ?, `description`= ?,`price`=?,`image`=?
+        where id = ?',[$nama,$description,$price,$image,$id]);
+        return redirect(route('dashboard'));
     }
 
     /**
@@ -106,4 +129,5 @@ class MenuController extends Controller
     {
         //
     }
+
 }
