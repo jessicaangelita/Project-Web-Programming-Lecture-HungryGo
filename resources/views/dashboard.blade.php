@@ -18,7 +18,11 @@
                         <p class="card-text"><small class="text-muted">{{$menu->price}}</small></p>
                         @can('admin')
                             <a href="/editmenu/{{$menu->id}}" class="btn btn-primary">Edit menu</a>
-                          
+                            <form method="post" action="/deletemenu/{{$menu->id}}">
+                                @method('delete')
+                                @csrf
+                                <button type="submit" class="btn btn-xl btn-dark btn-outline-danger mt-2">Delete</button>
+                            </form>
                             @else
                             <a href="{{ route('showmenu', ['id'=> $menu->id]) }}" class="btn btn-primary">Add to cart</a>
                         @endcan

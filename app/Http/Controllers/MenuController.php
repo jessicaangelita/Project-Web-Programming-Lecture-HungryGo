@@ -127,7 +127,8 @@ class MenuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Menu::where('id',$id)->delete();
+        return redirect(route('dashboard'));
     }
 
 }

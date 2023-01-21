@@ -27,7 +27,7 @@ Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu')-
 Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart')->middleware(['isCustomer']);
 Route::get('/ordermenu', [MenuController::class, 'ordermenu'])->middleware(['auth']);
 Route::get('/cart', [CartController::class, 'index'])->middleware(['isCustomer']);
-Route::get('/editmenu/{id}', [MenuController::class, 'edit']);
-Route::post('/updatemenu/{id}', [MenuController::class, 'update']);
-
+Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->middleware(['isAdmin']);
+Route::post('/updatemenu/{id}', [MenuController::class, 'update'])->middleware(['isAdmin']);
+Route::delete('/deletemenu/{id}', [MenuController::class, 'destroy'])->middleware(['isAdmin']);
 require __DIR__.'/auth.php';
