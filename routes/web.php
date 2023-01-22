@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,8 +26,9 @@ Route::get('/createmenu', [MenuController::class, 'create'])->middleware(['isAdm
 Route::post('/storemenu', [MenuController::class, 'store'])->name('storemenu')->middleware(['isAdmin']);
 Route::get('/showmenu/{id}', [MenuController::class, 'show'])->name('showmenu')->middleware(['isCustomer']);
 Route::post('/storecart/{id}', [CartController::class, 'store'])->name('storecart')->middleware(['isCustomer']);
-Route::get('/ordermenu', [MenuController::class, 'ordermenu'])->middleware(['auth']);
+Route::get('/ordermenu', [OrderController::class, 'show'])->middleware(['auth']);
 Route::get('/cart', [CartController::class, 'index'])->middleware(['isCustomer']);
 Route::post('/checkout',[CartController::class,'checkout'])->middleware(['isCustomer']);
+Route::patch('/changestatus/{id}', [OrderController::class, 'ChangeStatus'])->middleware(['isAdmin']);
 
 require __DIR__.'/auth.php';

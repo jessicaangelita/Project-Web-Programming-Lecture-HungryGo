@@ -11,4 +11,9 @@ class OrderHeader extends Model
     protected $fillable = [
         'user_id'
     ];
+
+    public function OrderDetails()
+    {
+        return $this->hasMany(OrderDetails::class, 'order_id', 'id');
+    }
 }

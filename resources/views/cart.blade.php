@@ -4,7 +4,7 @@
 
 <p class="display-2 text-center mt-4">Cart</p>
 
-@if ($cartHeader!=null)
+@if ($cartHeader!=null) 
 @foreach ($cartHeader->cartDetails as $cartDetail)
 <div class="card mb-3 m-5">
     <div class="row g-0">

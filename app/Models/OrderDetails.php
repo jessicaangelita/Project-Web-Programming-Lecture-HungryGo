@@ -14,4 +14,14 @@ class OrderDetails extends Model
         'quantity',
         'status_id'
     ];
+
+    public function Menu()
+    {
+        return $this->belongsTo(Menu::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(OrderStatus::class);
+    }
 }
