@@ -16,9 +16,13 @@ class CreateCartDetailsTable extends Migration
         Schema::create('cart_details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('cart_id');
-            $table->foreign('cart_id')->references('id')->on('cart_headers');
+            $table->foreign('cart_id')->references('id')->on('cart_headers')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('menu_id');
-            $table->foreign('menu_id')->references('id')->on('menus');
+            $table->foreign('menu_id')->references('id')->on('menus')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
             $table->integer('quantity');
             $table->timestamps();
         });

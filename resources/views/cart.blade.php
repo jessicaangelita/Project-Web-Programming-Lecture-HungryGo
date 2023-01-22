@@ -4,6 +4,7 @@
 
 <p class="display-2 text-center mt-4">Cart</p>
 
+@if ($cartHeader!=null)
 @foreach ($cartHeader->cartDetails as $cartDetail)
 <div class="card mb-3 m-5">
     <div class="row g-0">
@@ -20,7 +21,9 @@
     </div>
 </div>
 @endforeach
-<form action="">
+<form action="/checkout" method="POST">
+    @csrf
     <button class="btn btn-primary">Check Out</button>
 </form>
+@endif
 @endsection

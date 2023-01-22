@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\CartDetail;
 use App\Models\CartHeader;
+use App\Models\OrderHeader;
+use App\Models\OrderDetails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Throwable;
@@ -53,6 +55,39 @@ class CartController extends Controller
         return redirect(route('dashboard'));
     }
 
+    public function checkout()
+    {
+        // if($totalprice == 0){
+        //     return redirect(route('home'));
+        // }
+
+        $orderHeader = OrderHeader::create([
+            'user_id' => auth()->user()->id,
+        ]);
+
+        $cartHeader = CartHeader::where('user_id', '=', auth()->user()->id)->first();
+        foreach ($cartHeader->cartDetails as $cartDetail) {
+            // dd($cartDetail);
+            // if($cartDetail->item != null) {
+                OrderDetails::Create(
+                    [
+                        'order_id' => $orderHeader->id,
+                        'menu_id' => $cartDetail->menu_id,
+                        'quantity' => $cartDetail->quantity,
+                        'status_id'=> '1'
+                    ]
+                );
+            // }
+        }
+
+        CartHeader::destroy($cartHeader->id);
+        CartHeader::create([
+            'user_id' => auth()->user()->id
+        ]);
+
+        return redirect('/ordermenu');
+    }
+
     /**
      * Display the specified resource.
      *
@@ -97,4 +132,6 @@ class CartController extends Controller
     {
         //
     }
+
+
 }
