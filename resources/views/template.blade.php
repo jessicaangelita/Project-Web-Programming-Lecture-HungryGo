@@ -21,12 +21,16 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
               </li>
+              @can('admin')
               <li class="nav-item">
                 <a class="nav-link" href="/createmenu">CreateMenu</a>
               </li>
+              @endcan
+              @can('member')
               <li class="nav-item">
                 <a class="nav-link" href="/cart">Cart</a>
               </li>
+              @endcan
               <li class="nav-item">
                 <a class="nav-link" href="/ordermenu">Order</a>
               </li>
