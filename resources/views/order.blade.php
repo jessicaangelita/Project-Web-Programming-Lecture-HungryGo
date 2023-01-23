@@ -1,8 +1,10 @@
 @extends('template')
 
-@section('title', 'create menu')
+@section('title', 'Order')
 
 @section('body')
+
+<p class="display-2 text-center mt-4">Order</p>
 
 @if ($orders!=null)
 @foreach ($orders as $order)
@@ -29,7 +31,7 @@
         </form>
           @endif
           @endcan
-    
+
         </div>
       </div>
     </div>

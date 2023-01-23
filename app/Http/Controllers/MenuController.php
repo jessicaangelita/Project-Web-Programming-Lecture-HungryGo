@@ -42,6 +42,13 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'NameMenu'=>'required|min:5',
+            'DescriptionMenu'=>'required',
+            'PriceMenu'=>'required',
+            'ImageMenu'=>'required',
+        ]);
+
         $extension = $request->file('ImageMenu')->getClientOriginalExtension();
         $fileName = $request->NameMenu.'.'.$extension;
         $request->file('ImageMenu')->storeAs('public/menus/', $fileName);

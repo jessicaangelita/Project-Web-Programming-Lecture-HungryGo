@@ -1,7 +1,7 @@
 
 @extends('template')
 
-@section('title', 'dashboard')
+@section('title', 'menu')
 
 @section('body')
 <div class="d-flex flex-column m-5">

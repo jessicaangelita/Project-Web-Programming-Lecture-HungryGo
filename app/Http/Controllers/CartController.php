@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CartDetail;
 use App\Models\CartHeader;
+use App\Models\Menu;
 use App\Models\OrderHeader;
 use App\Models\OrderDetails;
 use Illuminate\Http\Request;
@@ -35,6 +36,10 @@ class CartController extends Controller
     {
         //
         // $user = auth()->user();
+
+        $request->validate([
+            'quantity' => 'required | min:1'
+        ]);
 
         CartHeader::updateOrCreate([
             'user_id'   => Auth::user()->id,
@@ -108,6 +113,8 @@ class CartController extends Controller
     public function edit($id)
     {
         //
+        $cartDetail = CartDetail::find($id);
+        return view('editcart', compact('cartDetail'));
     }
 
     /**
@@ -131,6 +138,8 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
+        CartDetail::where('id',$id)->delete();
+        return redirect(route('cart'));
     }
 
 

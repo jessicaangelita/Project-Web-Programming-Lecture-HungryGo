@@ -1,6 +1,6 @@
 @extends('template')
 
-@section('title', 'create menu')
+@section('title', $menu->name)
 
 @section('body')
 
@@ -14,6 +14,9 @@
       <form action="{{ route('storecart', ['id'=>$menu->id]) }}" method="POST">
         @csrf
         <input type="number" class="form-control" name="quantity">
+        @error('quantity')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         <button class="btn btn-primary mt-3" type="submit">Add to Cart</button>
       </form>
 
