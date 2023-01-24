@@ -1,8 +1,9 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a href="/" class="navbar-brand me-10 py-0 md-5">
+                <img src="./images/img_logo.png" alt="HungryGo's Logo" height="32" width="100px">
+                <img src="./images/text_logo.png" alt="HungryGo's Logo" height="32" width="100px">
             </a>
         </x-slot>
 
