@@ -17,7 +17,7 @@ use App\Http\Controllers\OrderController;
 */
 
 Route::get('/', function () {
-    return view('new-welcome');
+    return view('welcome');
 });
 
 Route::get('/about', function () {
