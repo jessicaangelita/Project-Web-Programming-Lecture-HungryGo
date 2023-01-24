@@ -23,7 +23,7 @@
         <img src="{{asset('storage/menus/'.$OrderDetail->Menu->image)}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
-        <div class="card-body">
+        <div class="card-body" style="background-color:rgb(223, 219, 219)">
           <h5 class="card-title" style="font-weight:bold; font-size:30px">{{$OrderDetail->Menu->name}}</h5>
           <p class="card-text">Quantity: {{$OrderDetail->quantity}}</p>
           <p class="card-text" style="margin-top: -2%">Total harga: {{$OrderDetail->quantity * $OrderDetail->Menu->price}}</p>
