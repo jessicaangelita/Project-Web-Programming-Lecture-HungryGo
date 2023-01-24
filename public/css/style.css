@@ -1,0 +1,114 @@
+:root {
+    --black: #161616;
+    --red: #a9031e;
+    --yellow: #ffb501;
+    --white: #fcfcfc;
+    --brown: #740013;
+    --gray: #808080;
+    --large: 64px;
+    --big: 48px;
+    --medium: 32px;
+    --small: 24px;
+    --bold: 700;
+    --normal: 500;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.bg-red {
+    background-color: var(--red);
+}
+
+.text-white,
+.navbar-toggler,
+.list-icon {
+    color: var(--white);
+}
+
+.list-icon {
+    font-size: var(--small);
+}
+
+.text-yellow {
+    color: var(--yellow);
+}
+
+.full-screen {
+    padding-top: 10vh;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    font-style: italic;
+    font-size: var(--large);
+    font-weight: var(--bold);
+}
+
+.best-seller {
+    font-style: italic;
+    font-weight: var(--normal);
+}
+
+.long-btn {
+    padding: 8px 100px;
+}
+
+.btn-black {
+    border-radius: 0;
+    border-width: 2.5px;
+    background-color: var(--black);
+    border-color: var(--black);
+    color: var(--white);
+}
+
+.btn-black:hover {
+    background-color: transparent;
+    border-color: var(--white);
+}
+
+.bg-white {
+    background-color: var(--white) !important;
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.short-about-us,
+.food-desc {
+    font-style: italic;
+    text-align: justify;
+}
+
+.btn-red {
+    border-radius: 0;
+    background-color: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+}
+
+.btn-red:hover {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.social-media {
+    font-size: var(--medium);
+    color: var(--white);
+}
+
+.social-media:hover {
+    color: var(--yellow);
+}
+
+.copyright {
+    opacity: 30%;
+}
