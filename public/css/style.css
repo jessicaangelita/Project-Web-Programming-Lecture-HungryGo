@@ -4,11 +4,12 @@
     --yellow: #ffb501;
     --white: #fcfcfc;
     --brown: #740013;
-    --gray: #808080;
+    --gray: #efefef;
     --large: 64px;
     --big: 48px;
     --medium: 32px;
     --small: 24px;
+    --tiny: 18px;
     --bold: 700;
     --normal: 500;
 }
@@ -81,6 +82,7 @@ body {
 .food-desc {
     font-style: italic;
     text-align: justify;
+    font-size: var(--tiny);
 }
 
 .btn-red {
@@ -111,4 +113,51 @@ body {
 
 .copyright {
     opacity: 30%;
+}
+
+.pt-sm-5 {
+    padding-top: 50px;
+}
+
+.center-of-image {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bg-gray {
+    background-color: var(--gray);
+}
+
+.text-brown {
+    color: var(--brown);
+}
+
+.bar-title {
+    font-size: var(--small);
+    font-weight: var(--bold);
+}
+
+.bar-container {
+    width: 100%;
+    background-color: var(--black);
+    border-radius: 6px;
+}
+
+.bar {
+    height: var(--tiny);
+    background-color: var(--brown);
+    border-radius: 6px;
+}
+
+.bar-89 {
+    width: 89%;
+}
+
+.bar-92 {
+    width: 92%;
+}
+
+.bar-83 {
+    width: 83%;
 }

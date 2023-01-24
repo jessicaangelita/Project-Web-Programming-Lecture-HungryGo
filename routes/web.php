@@ -20,6 +20,10 @@ Route::get('/', function () {
     return view('new-welcome');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/dashboard', [MenuController::class, 'index'])->middleware(['auth'])->name('dashboard');
 
 Route::get('/createmenu', [MenuController::class, 'create'])->middleware(['isAdmin']);

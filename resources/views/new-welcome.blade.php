@@ -37,7 +37,7 @@
                         <a class="nav-link text-white active" aria-current="page" href="/">Home</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link text-white" aria-current="page" href="#">About Us</a>
+                        <a class="nav-link text-white" aria-current="page" href="/about">About</a>
                     </li>
                 </ul>
                 @if (Route::has('login'))
@@ -95,7 +95,7 @@
     </div>
 
     <div class="container-fluid bg-white">
-        <div class="container full-screen">
+        <div class="container full-screen py-5">
             <div class="row d-flex align-items-center">
                 <div class="col-md-6">
                     <img src="./images/chef.png" alt="Welcome Pizza" class="img-fluid">
@@ -112,7 +112,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-12">
-                            <a class="btn long-btn btn-red" href="#" role="button">Read More</a>
+                            <a class="btn long-btn btn-red" href="/about" role="button">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <footer class="bg-black text-white mt-5">
+    <footer class="bg-black text-white">
         <div class="container py-3">
             <div class="row d-flex align-items-center">
                 <div class="col-6">
