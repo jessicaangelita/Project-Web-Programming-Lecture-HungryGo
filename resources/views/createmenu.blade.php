@@ -3,39 +3,47 @@
 @section('title', 'create menu')
 
 @section('body')
+<div class="container-fluid px-0">
+    <div class="pt-sm-5">
+        <div class="position-relative">
+            <img src="./images/page_title_bg.png" alt="Pizza" class="img-fluid">
+            <h1 class="title text-yellow position-absolute center-of-image">Create Menu</h1>
+        </div>
+    </div>
+</div>
+
 <div class="m-5">
-    <h1 class="display-1 text-center">Create Menu</h1>
     <form action="{{ route('storemenu') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="form-group">
-            <label for="NameMenu">Nama Menu</label>
-            <input type="text" class="form-control" id="NameMenu" aria-describedby="emailHelp" placeholder="Enter Nama Menu" name="NameMenu">
+        <div style="background-color:#f4e3e2" class="form-group m-3">
+            <label for="NameMenu" style="color:#660601">Menu Name</label>
+            <input type="text" class="form-control" id="NameMenu" aria-describedby="emailHelp" placeholder="Enter Menu Name" name="NameMenu">
             @error('NameMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="DescriptionMenu">Description Menu</label>
-            <input type="text" class="form-control" id="DescriptionMenu" placeholder="Enter Description Menu" name="DescriptionMenu">
+        <div style="background-color:#f4e3e2" class="form-group m-3">
+            <label for="DescriptionMenu" style="color:#660601">Menu Description</label>
+            <input type="text" class="form-control" id="DescriptionMenu" placeholder="Enter Menu Description" name="DescriptionMenu">
             @error('DescriptionMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="PriceMenu">Price Menu</label>
-            <input type="number" class="form-control" id="PriceMenu" placeholder="Enter Price Menu" name="PriceMenu">
+        <div style="background-color:#f4e3e2" class="form-group m-3">
+            <label for="PriceMenu" style="color:#660601">Menu Price</label>
+            <input type="number" class="form-control" id="PriceMenu" placeholder="Enter Menu Price" name="PriceMenu">
             @error('PriceMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <div class="form-group">
-            <label for="ImageMenu">Image Menu</label>
+        <div style="background-color:#f4e3e2" class="form-group m-3">
+            <label for="ImageMenu" style="color:#660601">Menu Image</label>
             <input type="file" class="form-control" id="IamgeMenu" placeholder="Enter Image Menu" name="ImageMenu">
             @error('ImageMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        <button type="submit" class="btn btn-primary mt-3 btn-red">Submit</button>
     </form>
 </div>
 
