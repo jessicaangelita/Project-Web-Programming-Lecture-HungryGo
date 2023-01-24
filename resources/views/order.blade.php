@@ -4,7 +4,15 @@
 
 @section('body')
 
-<p class="display-2 text-center mt-4">Order</p>
+<div class="container-fluid px-0">
+    <div class="pt-sm-5">
+        <div class="position-relative">
+            <img src="./images/page_title_bg.png" alt="Pizza" class="img-fluid">
+            <h1 class="title text-yellow position-absolute center-of-image">Order</h1>
+        </div>
+    </div>
+</div>
+
 
 @if ($orders!=null)
 @foreach ($orders as $order)
@@ -16,17 +24,17 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">Nama Item: {{$OrderDetail->Menu->name}}</h5>
+          <h5 class="card-title" style="font-weight:bold; font-size:30px">{{$OrderDetail->Menu->name}}</h5>
           <p class="card-text">Quantity: {{$OrderDetail->quantity}}</p>
-          <p class="card-text">Total harga: {{$OrderDetail->quantity * $OrderDetail->Menu->price}}</p>
-          <p class="card-text">Status: {{$OrderDetail->status->name}}</p>
+          <p class="card-text" style="margin-top: -2%">Total harga: {{$OrderDetail->quantity * $OrderDetail->Menu->price}}</p>
+          <p class="card-text" style="font-size: 20px; color:red">Status: {{$OrderDetail->status->name}}</p>
           @can('admin')
           @if ($OrderDetail->status->name != 'Done')
           <form action="/changestatus/{{$OrderDetail->id}}" method="POST">
             @csrf
             @method('patch')
-            <button class="btn btn-primary">
-                done
+            <button class="btn btn-xl btn-dark btn-outline-danger">
+                Done
             </button>
         </form>
           @endif
