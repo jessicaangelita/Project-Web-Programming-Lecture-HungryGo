@@ -909,6 +909,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
+.btn-size{
+    margin: 2vh 0;
+    width: 150px;
+    height: 35px;
+    justify-content: center;
+    border: none;
+}
 .bg-indigo-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(238 242 255 / var(--tw-bg-opacity));
@@ -1064,6 +1071,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.own-text-red-900 {
+    --tw-text-opacity: 1;
+    color: rgb(169 3 30 / var(--tw-text-opacity));
+  }
 .text-indigo-600 {
   --tw-text-opacity: 1;
   color: rgb(79 70 229 / var(--tw-text-opacity));
@@ -1186,6 +1197,10 @@ select {
   --tw-text-opacity: 1;
   color: rgb(17 24 39 / var(--tw-text-opacity));
 }
+.hover\:own-text-red-900:hover {
+    --tw-text-opacity: 1;
+    color: rgb(169 3 30 / var(--tw-text-opacity));
+  }
 .hover\:text-gray-700:hover {
   --tw-text-opacity: 1;
   color: rgb(55 65 81 / var(--tw-text-opacity));
