@@ -15,6 +15,7 @@
     <div class="container mt-5">
         <h1 class="subtitle text-black text-center mb-5">All Dishes</h1>
         <div class="row">
+            @if(count($menus) != 0):
             @foreach ($menus as $menu)
                 <div class="col-6 col-lg-3 mt-2 mb-4">
                     <div class="card p-3">
@@ -40,6 +41,11 @@
                     </div>
                 </div>
             @endforeach
+            @else
+                <div class="empty-content">
+                    <h3>No Menu Available!</h3>
+                </div>
+            @endif
         </div>
     </div>
 @endsection
