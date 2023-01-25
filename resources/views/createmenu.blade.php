@@ -9,21 +9,21 @@
         @csrf
         <div class="form-group">
             <label for="NameMenu">Nama Menu</label>
-            <input type="text" class="form-control" id="NameMenu" aria-describedby="emailHelp" placeholder="Enter Nama Menu" name="NameMenu">
+            <input type="text" class="form-control" id="NameMenu" aria-describedby="emailHelp" placeholder="Enter Nama Menu" name="NameMenu" value="{{ old("NameMenu") }}">
             @error('NameMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <label for="DescriptionMenu">Description Menu</label>
-            <input type="text" class="form-control" id="DescriptionMenu" placeholder="Enter Description Menu" name="DescriptionMenu">
+            <input type="text" class="form-control" id="DescriptionMenu" placeholder="Enter Description Menu" name="DescriptionMenu" value="{{ old("DescriptionMenu") }}">
             @error('DescriptionMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror
         </div>
         <div class="form-group">
             <label for="PriceMenu">Price Menu</label>
-            <input type="number" class="form-control" id="PriceMenu" placeholder="Enter Price Menu" name="PriceMenu">
+            <input type="number" class="form-control" id="PriceMenu" placeholder="Enter Price Menu" name="PriceMenu" value="{{ old("PriceMenu") }}">
             @error('PriceMenu')
                 <div class="alert alert-danger">{{ $message }}</div>
             @enderror

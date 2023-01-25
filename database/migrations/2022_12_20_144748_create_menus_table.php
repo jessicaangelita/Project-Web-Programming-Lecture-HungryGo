@@ -20,6 +20,7 @@ class CreateMenusTable extends Migration
             $table->integer('price');
             $table->string('image');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

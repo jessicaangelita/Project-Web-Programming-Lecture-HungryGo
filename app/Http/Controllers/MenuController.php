@@ -45,8 +45,8 @@ class MenuController extends Controller
         $request->validate([
             'NameMenu'=>'required|min:5',
             'DescriptionMenu'=>'required',
-            'PriceMenu'=>'required',
-            'ImageMenu'=>'required',
+            'PriceMenu'=>'required|integer|min:1000',
+            'ImageMenu'=>'required|file|mimes:jpg, png, jpeg',
         ]);
 
         $extension = $request->file('ImageMenu')->getClientOriginalExtension();
@@ -107,8 +107,8 @@ class MenuController extends Controller
         $request->validate([
             'NameMenu'=>'required|min:5',
             'DescriptionMenu'=>'required',
-            'PriceMenu'=>'required',
-            'ImageMenu'=>'required',
+            'PriceMenu'=>'required|integer|min:1000',
+            'ImageMenu'=>'required|file|mimes:jpg, png, jpeg',
             ]);
 
         $extension = $request->file('ImageMenu')->getClientOriginalExtension();

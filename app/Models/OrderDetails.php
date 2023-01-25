@@ -17,7 +17,7 @@ class OrderDetails extends Model
 
     public function Menu()
     {
-        return $this->belongsTo(Menu::class);
+        return $this->belongsTo(Menu::class)->withTrashed();
     }
 
     public function status()

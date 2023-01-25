@@ -6,6 +6,7 @@
 
 @if ($cartHeader!=null)
 @foreach ($cartHeader->cartDetails as $cartDetail)
+@if ($cartDetail->Menu != null)
 <div class="card mb-3 m-5">
     <div class="row g-0">
       <div class="col-md-4">
@@ -26,6 +27,7 @@
       </div>
     </div>
 </div>
+@endif
 @endforeach
 <form action="/checkout" method="POST">
     @csrf

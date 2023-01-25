@@ -38,7 +38,7 @@ class CartController extends Controller
         // $user = auth()->user();
 
         $request->validate([
-            'quantity' => 'required | min:1'
+            'quantity' => 'required | integer | min:1'
         ]);
 
         CartHeader::updateOrCreate([
