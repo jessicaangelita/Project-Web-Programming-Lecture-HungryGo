@@ -238,22 +238,22 @@ body {
 }
 
 .login{
-    /* top: 5vh; */
     left: 0;
     width: 35vw;
     height: 100%;
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; */
     text-align: center;
+    font-size: 15px;
 }
 
-.login-form, .register-form{
+.login-register-form{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 5vh 2vw;
+    padding: 5vh 2vw 0;
 }
 
 .panel{
@@ -263,13 +263,10 @@ body {
 .login-input-field{
     width: 120%;
     height: 50px;
-    background: #fcfcfc;
     margin: 10px 0;
-    border: 1px solid #fff;
     border-radius: 50px;
     display: flex;
     align-items: center;
-    /* padding: 0 1vw; */
 }
 
 .login-input-field i{
@@ -281,10 +278,9 @@ body {
 }
 
 .login-input-field input{
-    background: none;
+    background: #fcfcfc;
     border: none;
     outline: none;
-    /* width: 100%; */
     margin: 0 1vw;
     font-size: 15px;
     font-weight: 500;

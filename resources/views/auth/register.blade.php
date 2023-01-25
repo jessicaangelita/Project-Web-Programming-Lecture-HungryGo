@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HungryGo | Register</title>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <!-- Own CSS -->
     <link rel="stylesheet" href="./css/style.css"/>
-    <title>Register Form</title>
+    <link rel="icon" href="./images/img_logo.png">
   </head>
 
-    <body class="">
+    <body>
         <x-guest-layout>
             <x-auth-card>
                 <x-slot name="logo">
@@ -21,7 +27,7 @@
                 <!-- Validation Errors -->
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-                <form class="register-form" method="POST" action="{{ route('register') }}">
+                <form class="login-register-form" method="POST" action="{{ route('register') }}">
                     @csrf
                     <div class="register">
                         <div class="panel">
@@ -41,6 +47,12 @@
                             <div class="mt-4 login-input-field">
                                 <i class="fas fa-lock"></i>
                                 <x-input id="password" class="block mt-1 w-full" placeholder="Password" type="password" name="password" required autocomplete="new-password" />
+                            </div>
+
+                            <!-- Confirm Password -->
+                            <div class="mt-4 login-input-field">
+                                <i class="fas fa-lock"></i>
+                                <x-input id="password_confirmation" class="block mt-1 w-full" placeholder="Confirm Password" type="password" name="password_confirmation" required />
                             </div>
                         </div>
 
