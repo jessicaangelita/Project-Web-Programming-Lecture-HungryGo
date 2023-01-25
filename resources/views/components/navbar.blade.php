@@ -1,9 +1,9 @@
 <nav class="navbar fixed-top navbar-expand-lg bg-red">
     <div class="container">
-        <a href="/" class="navbar-brand me-5 py-0">
-            <img src="./images/img_logo.png" alt="HungryGo's Logo" height="32">
-            <img src="./images/text_logo.png" alt="HungryGo's Logo" height="32">
-        </a>
+        <div class="navbar-brand me-5 py-0">
+            <img src="{{ asset('./images/img_logo.png') }}" alt="HungryGo's Logo" height="32">
+            <img src="{{ asset('./images/text_logo.png') }}" alt="HungryGo's Logo" height="32">
+        </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list list-icon"></i>
         </button>

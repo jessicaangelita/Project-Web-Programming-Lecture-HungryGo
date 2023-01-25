@@ -18,8 +18,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,500;1,700&display=swap" rel="stylesheet">
 
     <!-- Own CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="icon" href="./images/img_logo.png">
+    <link rel="stylesheet" type="text/css" href="{{ asset('./css/style.css') }}">
+    <link rel="icon" href="{{ asset('./images/img_logo.png') }}">
 </head>
 <body>
     <x-navbar />

@@ -5,6 +5,7 @@
     --white: #fcfcfc;
     --brown: #740013;
     --gray: #efefef;
+    --dark-gray: #808080;
     --large: 64px;
     --big: 48px;
     --medium: 32px;
@@ -206,6 +207,45 @@ body {
 .btn-red-border:hover {
     background-color: var(--red);
     color: var(--white);
+}
+
+.btn-yellow-border {
+    border-radius: 0;
+    border-width: 2.5px;
+    border-color: var(--yellow);
+    color: var(--yellow);
+    font-weight: var(--bold);
+    width: 100%;
+}
+
+.btn-yellow-border:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+}
+
+.food-img {
+    border: 2.5px solid var(--dark-gray);
+    border-radius: 10px;
+}
+
+.food-name-detail,
+.food-price-detail {
+    font-size: var(--big);
+    font-weight: var(--bold);
+}
+
+.food-price-detail {
+    color: var(--red);
+}
+
+.text-gray {
+    color: var(--dark-gray);
+}
+
+.text-red {
+    color: var(--red);
+    font-size: var(--small);
+    font-weight: var(--bold);
 }
 
 /* ///// */
