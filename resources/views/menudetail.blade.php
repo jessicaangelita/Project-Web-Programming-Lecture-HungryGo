@@ -17,7 +17,7 @@
         @error('quantity')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
-        <button class="btn btn-primary mt-3" type="submit">Add to Cart</button>
+        <button class="btn btn-primary mt-3 btn-red" type="submit">Add to Cart</button>
       </form>
 
     </div>

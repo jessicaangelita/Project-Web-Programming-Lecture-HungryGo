@@ -1,20 +1,20 @@
 <x-guest-layout>
-    <x-auth-card>
+    <x-auth-card style="background-color: #1f1f1f">
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+            <a href="/" class="navbar-brand me-10 py-0 md-5">
+                <img src="./images/img_logo.png" alt="HungryGo's Logo" height="32" width="100px">
+                <img src="./images/text_logo.png" alt="HungryGo's Logo" height="32" width="100px">
             </a>
         </x-slot>
-
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" :status="session('status')" />
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
+
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />
@@ -23,7 +23,7 @@
             </div>
 
             <!-- Password -->
-            <div class="mt-4">
+            <div class="mt-4" >
                 <x-label for="password" :value="__('Password')" />
 
                 <x-input id="password" class="block mt-1 w-full"
@@ -52,5 +52,6 @@
                 </x-button>
             </div>
         </form>
+
     </x-auth-card>
 </x-guest-layout>

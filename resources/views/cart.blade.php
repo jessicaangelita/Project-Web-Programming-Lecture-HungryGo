@@ -2,7 +2,15 @@
 @section('title', 'Cart')
 @section('body')
 
-<p class="display-2 text-center mt-4">Cart</p>
+<div class="container-fluid px-0">
+    <div class="pt-sm-5">
+        <div class="position-relative">
+            <img src="./images/page_title_bg.png" alt="Pizza" class="img-fluid">
+            <h1 class="title text-yellow position-absolute center-of-image">Cart</h1>
+        </div>
+    </div>
+</div>
+
 
 @if ($cartHeader!=null)
 @foreach ($cartHeader->cartDetails as $cartDetail)
@@ -13,11 +21,11 @@
         <img src="{{asset('storage/menus/'.$cartDetail->Menu->image)}}" class="img-fluid rounded-start" alt="...">
       </div>
       <div class="col-md-8">
-        <div class="card-body">
-            <h5 class="card-title">Nama Item: {{$cartDetail->Menu->name}}</h5>
+        <div class="card-body" style="background-color:rgb(223, 219, 219)">
+            <h5 class="card-title" style="font-weight: bold; font-size:30px">{{$cartDetail->Menu->name}}</h5>
             <p class="card-text">Quantity: {{$cartDetail->quantity}}</p>
-            <p class="card-text">Total harga: {{$cartDetail->quantity * $cartDetail->Menu->price}}</p>
-            <a href="/editcart/{{$cartDetail->id}}" class="btn btn-primary">Edit cart</a>
+            <p class="card-text" style="margin-top: -2%">Total harga: Rp.{{$cartDetail->quantity * $cartDetail->Menu->price }}</p>
+            <a href="/editcart/{{$cartDetail->id}}" class="btn btn-red" style="border-radius:2px">Edit cart</a>
             <form method="post" action="/deletecart/{{$cartDetail->id}}">
                 @method('delete')
                 @csrf
@@ -31,7 +39,7 @@
 @endforeach
 <form action="/checkout" method="POST">
     @csrf
-    <button class="btn btn-primary">Check Out</button>
+    <button class="btn btn-red mt-3 mb-3 m-5" style="border-radius: 4px; font-size:20px">Check Out</button>
 </form>
 @endif
 @endsection
