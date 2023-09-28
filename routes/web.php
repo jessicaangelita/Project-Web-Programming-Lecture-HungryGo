@@ -27,6 +27,7 @@ Route::get('/about', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [MenuController::class, 'index'])->name('dashboard');
     Route::get('/ordermenu', [OrderController::class, 'show']);
+
 });
 
 Route::middleware('isAdmin')->group(function () {
@@ -35,6 +36,7 @@ Route::middleware('isAdmin')->group(function () {
     Route::get('/editmenu/{id}', [MenuController::class, 'edit'])->name('editmenu');
     Route::patch('/updatemenu/{id}', [MenuController::class, 'update'])->name('updatemenu');
     Route::delete('/deletemenu/{id}', [MenuController::class, 'destroy'])->name('deletemenu');
+
     Route::patch('/changestatus/{id}', [OrderController::class, 'ChangeStatus']);
 });
 
@@ -46,6 +48,7 @@ Route::middleware('isCustomer')->group(function(){
     Route::patch('/updatecart/{id}', [CartController::class, 'update'])->name('updatecart');
     Route::delete('/deletecart/{id}', [CartController::class, 'destroy'])->name('deletecart');
     Route::post('/checkout',[CartController::class,'checkout']);
-});
 
+});
+Route::get('/viewMenu/search',[MenuController::class,'viewMenu']);
 require __DIR__.'/auth.php';

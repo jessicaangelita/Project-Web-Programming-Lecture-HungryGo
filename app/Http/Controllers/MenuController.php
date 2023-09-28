@@ -53,6 +53,7 @@ class MenuController extends Controller
         $fileName = $request->NameMenu.'.'.$extension;
         $request->file('ImageMenu')->storeAs('public/menus/', $fileName);
 
+
         Menu::create([
             'name' => $request->NameMenu,
             'description' => $request->DescriptionMenu,
@@ -61,6 +62,12 @@ class MenuController extends Controller
         ]);
 
         return redirect(route('dashboard'));
+    }
+
+    public function viewMenu(Request $request){
+
+        $menu=Menu::where('name', 'LIKE',"%$request->search%")->simplePaginate(10);
+        return view('dashboard', compact('menu'));
     }
 
 

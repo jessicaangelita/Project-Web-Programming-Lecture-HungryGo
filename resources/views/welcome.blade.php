@@ -16,7 +16,7 @@
                     </div>
                     <div class="row mt-3">
                         <div class="col-12">
-                            @if (Route::has('login'))
+                            @if (Rou    te::has('login'))
                                 @auth
                                     <a class="btn long-btn btn-black" href="{{ url('/dashboard') }}" role="button">Order Now</a>
                                 @else

@@ -11,7 +11,7 @@
 
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,6 +20,7 @@
     <!-- Own CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('./css/style.css') }}">
     <link rel="icon" href="{{ asset('./images/img_logo.png') }}">
+    
 </head>
 <body>
     <x-navbar />
